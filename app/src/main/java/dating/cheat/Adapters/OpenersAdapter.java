@@ -47,7 +47,7 @@ public class OpenersAdapter extends RecyclerView.Adapter<OpenersAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
         try {
 
@@ -72,6 +72,8 @@ public class OpenersAdapter extends RecyclerView.Adapter<OpenersAdapter.ViewHold
                 public void onClick(View view) {
 
                     Intent i = new Intent(mContext,DetailActivity.class);
+                    i.putExtra("message",post.getMessage());
+                    i.putExtra("explanation",post.getExplanation());
                     mContext.startActivity(i);
                 }
             });

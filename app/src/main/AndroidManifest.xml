@@ -29,8 +29,10 @@
         <activity
             android:name=".UI.ThankyouActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UI.DetailActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".UI.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.CategoryDetailActivity"></activity>
     </application>
 
 </manifest>

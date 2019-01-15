@@ -16,8 +16,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
@@ -59,7 +61,19 @@ public class DetailActivity extends AppCompatActivity {
 
         }
 
-
+        final TextView message = (TextView) findViewById(R.id.message);
+        final TextView explanation = (TextView) findViewById(R.id.explanation);
+        message.setMovementMethod(new ScrollingMovementMethod());
+        explanation.setMovementMethod(new ScrollingMovementMethod());
+try {
+        String stMessage = getIntent().getStringExtra("message");
+        String stExplanation = getIntent().getStringExtra("explanation");
+        message.setText(stMessage);
+        explanation.setText(stExplanation);
+}catch (Exception e)
+{
+    e.getMessage();
+}
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -78,31 +92,28 @@ public class DetailActivity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
-                      /*  if(bottomNavigationMenuView.getSelectedItemId()==0)
-                        {
-
-                        }
-                        else {
-
-
-                        } */
-
-
                         break;
 
                     case R.id.menu_update:
                         fragCategory = new ConversationFragment();
                         replaceFragment(fragCategory);
+                        message.setVisibility(View.GONE);
+                        explanation.setVisibility(View.GONE);
                         break;
 
                     case R.id.menu_notification:
                         fragCategory = new MoreFragment();
                         replaceFragment(fragCategory);
+                        message.setVisibility(View.GONE);
+                        explanation.setVisibility(View.GONE);
                         break;
 
                     case R.id.menu_account:
                         fragCategory = new ThankyouFragment();
                         replaceFragment(fragCategory);
+                        message.setVisibility(View.GONE);
+                        explanation.setVisibility(View.GONE);
+
                         break;
 
                 }

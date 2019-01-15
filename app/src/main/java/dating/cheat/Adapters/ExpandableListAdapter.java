@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import dating.cheat.Model.Conversation;
 import dating.cheat.R;
+import dating.cheat.UI.DetailActivity;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
@@ -42,7 +44,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition, final int childPosition,
+    public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
         final Conversation childText = (Conversation) getChild(groupPosition, childPosition);
@@ -86,6 +88,60 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             txtListChild.setText(childText.getMessage6());
 
         }
+        txtListChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(_context,DetailActivity.class);
+                switch (groupPosition)
+                {
+                    case 0 :
+                    {
+                        i.putExtra("message",childText.getMessage());
+                        i.putExtra("explanation",childText.getExplanation());
+                        break;
+                    }
+
+                    case 1 :
+                    {
+                        i.putExtra("message",childText.getMessage2());
+                        i.putExtra("explanation",childText.getExplanation2());
+                        break;
+                    }
+
+                    case 2 :
+                    {
+                        i.putExtra("message",childText.getMessage3());
+                        i.putExtra("explanation",childText.getExplanation3());
+                        break;
+                    }
+
+                    case 3 :
+                    {
+                        i.putExtra("message",childText.getMessage4());
+                        i.putExtra("explanation",childText.getExplanation4());
+                        break;
+                    }
+
+                    case 4 :
+                    {
+                        i.putExtra("message",childText.getMessage5());
+                        i.putExtra("explanation",childText.getExplanation5());
+                        break;
+                    }
+
+                    case 5 :
+                    {
+                        i.putExtra("message",childText.getMessage6());
+                        i.putExtra("explanation",childText.getExplanation6());
+                        break;
+                    }
+
+
+                }
+
+                _context.startActivity(i);
+            }
+        });
         return convertView;
     }
 

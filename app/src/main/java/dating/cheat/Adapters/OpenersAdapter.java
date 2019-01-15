@@ -1,7 +1,11 @@
 package dating.cheat.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,11 +20,13 @@ import java.util.ArrayList;
 
 import dating.cheat.Model.Openers;
 import dating.cheat.R;
+import dating.cheat.UI.DetailActivity;
 
 public class OpenersAdapter extends RecyclerView.Adapter<OpenersAdapter.ViewHolder>{
 
     public Context mContext;
     public int index=0;
+    public FragmentManager fragmentManager;
 
     public ArrayList<Openers> originalItems = new ArrayList<>();
 
@@ -61,7 +67,14 @@ public class OpenersAdapter extends RecyclerView.Adapter<OpenersAdapter.ViewHold
 
 
             holder.txtTous.setText(post.getMessage());
+            holder.txtTous.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                    Intent i = new Intent(mContext,DetailActivity.class);
+                    mContext.startActivity(i);
+                }
+            });
 
 
 

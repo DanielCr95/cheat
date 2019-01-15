@@ -20,11 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.ConversationActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".UI.MoreActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".UI.ThankyouActivity"
+        <activity
+            android:name=".UI.ConversationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.MoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.ThankyouActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.DetailActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

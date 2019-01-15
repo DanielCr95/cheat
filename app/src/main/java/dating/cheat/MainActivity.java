@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("aa");
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
         navigation = (BottomNavigationView)findViewById(R.id.bottom_view);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("TOUS"));
         tabLayout.addTab(tabLayout.newTab().setText("CATÉGORIES"));
         tabLayout.addTab(tabLayout.newTab().setText("FAVORIS"));

@@ -32,7 +32,8 @@
         <activity
             android:name=".UI.DetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UI.CategoryDetailActivity"></activity>
+        <activity android:name=".UI.CategoryDetailActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

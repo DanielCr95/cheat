@@ -3,23 +3,23 @@
 
     <item
         android:id="@+id/menu_home"
-        android:icon="@drawable/ic_action_name"
+        android:icon="@drawable/opener"
         android:title="" />
 
     <item
         android:id="@+id/menu_update"
-        android:icon="@drawable/ic_action_name"
+        android:icon="@drawable/conversation"
         android:title="" />
 
 
     <item
         android:id="@+id/menu_notification"
-        android:icon="@drawable/ic_action_name"
+        android:icon="@drawable/more"
         android:title="" />
 
     <item
         android:id="@+id/menu_account"
-        android:icon="@drawable/ic_action_name"
+        android:icon="@drawable/thankyou"
         android:title="" />
 
 </menu>
